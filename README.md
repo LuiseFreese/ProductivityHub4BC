@@ -20,6 +20,8 @@ Productivity Hub
 * can be used as a standalone app or as a personal app in Microsoft Teams
 * adjusts to all 3 themes in Teams: default, dark, high-contrast
 
+![dark mode](assets/dark.png)
+
 ## Canvas App Design
 
 * app leverages a [custom theme](https://github.com/pnp/powerapps-samples/tree/main/samples/fluentui-for-teams-theme) - built to adapt Microsoft Teams look & feel
