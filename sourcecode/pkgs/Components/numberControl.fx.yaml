@@ -1,0 +1,150 @@
+numberControl As CanvasComponent:
+    ButtonColor: =Transparent
+    ButtonStyles: |-
+        ={
+            Fill: gblAppStyles.ButtonPrimary.Fill,
+            FillDarker: gblAppColors.TeamsDefaultTint60,
+            Color: gblAppStyles.ButtonPrimary.Color,
+            RadiusTopLeft: gblAppStyles.ButtonPrimary.Radius,
+            BorderColor: gblAppStyles.ButtonPrimary.BorderColor,
+            BorderThickness: gblAppStyles.ButtonPrimary.BorderThickness,
+            DisabledBorderColor: gblAppStyles.ButtonPrimary.DisabledBorderColor,
+            DisabledColor: gblAppStyles.ButtonPrimary.DisabledColor,
+            DisabledFill: gblAppStyles.ButtonPrimary.DisabledFill,
+            FocusedBorderColor: gblAppStyles.ButtonPrimary.FocusedBorderColor,
+            FocusedBorderThickness: gblAppStyles.ButtonPrimary.FocusedBorderThickness,
+            HoverBorderColor: gblAppStyles.ButtonPrimary.BorderColor,
+            HoverColor: gblAppStyles.ButtonPrimary.Color,
+            HoverFill: gblAppStyles.ButtonPrimary.Fill,
+            PressedBorderColor: gblAppStyles.ButtonPrimary.PressedBorderColor,
+            PressedColor: gblAppStyles.ButtonPrimary.PressedColor,
+            PressedFill: gblAppStyles.ButtonPrimary.PressedFill,
+            Radius: 4,
+            Width: 68,
+            Height: 32,
+            BackGround:gblAppStyles.Background.Fill
+        }
+    ButtonTextColor: =Black
+    Fill: =Transparent
+    Height: =100
+    Increments: =5
+    Max: =100
+    Min: =0
+    NumberOutput: =varNumber
+    StartNumber: =0
+    Width: =230
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    btnDown As button:
+        BorderColor: =tbNumber.BorderColor
+        BorderThickness: =1
+        Color: =numberControl.ButtonTextColor
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =numberControl.ButtonColor
+        Height: =60
+        HoverBorderColor: =Self.BorderColor
+        HoverColor: =Self.Color
+        HoverFill: =Self.Fill
+        OnSelect: |-
+            =If(
+                (numberControl.NumberOutput - Value(numberControl.Increments)) < Value(numberControl.Min),
+                Set(
+                    varNumber,
+                    Value(tbNumber.Text)
+                ),
+                Set(
+                    varNumber,
+                    Value(tbNumber.Text) - Value(numberControl.Increments)
+                )
+            )
+        PressedBorderColor: =Self.Fill
+        PressedColor: =Self.Fill
+        PressedFill: =Gray
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =0
+        RadiusTopLeft: =20
+        RadiusTopRight: =0
+        Size: =30
+        Text: ="-"
+        Width: =69
+        X: =6
+        Y: =20
+        ZIndex: =1
+
+    btnUp As button:
+        BorderColor: =tbNumber.BorderColor
+        BorderThickness: =1
+        Color: =numberControl.ButtonTextColor
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =numberControl.ButtonColor
+        Height: =60
+        HoverBorderColor: =Self.BorderColor
+        HoverColor: =Self.Color
+        HoverFill: =Self.Fill
+        OnSelect: |-
+            =If(
+                (numberControl.NumberOutput + Value(numberControl.Increments)) > Value(numberControl.Max),
+                Set(
+                    varNumber,
+                    Value(tbNumber.Text)
+                ),
+                Set(
+                    varNumber,
+                    Value(tbNumber.Text) + Value(numberControl.Increments)
+                )
+            )
+        PressedBorderColor: =Self.Fill
+        PressedColor: =Self.Fill
+        PressedFill: =Gray
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =20
+        RadiusTopLeft: =0
+        RadiusTopRight: =20
+        Size: =30
+        Text: ="+"
+        Width: =69
+        X: =156
+        Y: =20
+        ZIndex: =2
+
+    tbNumber As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(204, 204, 204, 1)
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        Default: |-
+            =If(
+                IsBlank(numberControl.NumberOutput),
+                Value(numberControl.StartNumber),
+                numberControl.NumberOutput
+            )
+        DisabledBorderColor: =Self.BorderColor
+        DisabledColor: =Self.Color
+        DisabledFill: =Self.Fill
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =Self.BorderThickness
+        Height: =60
+        HoverBorderColor: =Self.BorderColor
+        HoverColor: =Self.Color
+        HoverFill: =Self.Fill
+        OnChange: |-
+            = Set(
+                    varNumber,
+                    Value(tbNumber.Text)
+                )
+        PaddingLeft: =5
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Width: =79
+        X: =76
+        Y: =20
+        ZIndex: =3
+

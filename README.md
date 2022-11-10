@@ -2,7 +2,7 @@
 
 Productivity Hub for Business Central is a Power Apps solution that allows users to view and interact with a dashboard containing information on Business Central tables customers, items, and employees. 
 
-![Productivity Hub](assets/images/screen.png)
+![Productivity Hub](assets/screen.png)
 
 ## Architecture
 
@@ -25,7 +25,7 @@ Productivity Hub
 * app leverages a [custom theme](https://github.com/pnp/powerapps-samples/tree/main/samples/fluentui-for-teams-theme) - built to adapt Microsoft Teams look & feel
 * makes extensive use of containers to achieve responsive behavior
 
-![responsive design](assets/images/responsive.gif)
+![responsive design](assets/responsive.gif)
 
 ## Resources
 

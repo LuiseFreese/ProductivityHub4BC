@@ -1,0 +1,1827 @@
+"'Business Central' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: =
+
+    Canvas1_2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Main_2 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            ctn_customers As groupContainer.manualLayoutContainer:
+                Height: =lbl_customers.Height+ CountRows(gal_customers.AllItems)*(gal_customers.TemplateHeight+ gal_customers.TemplatePadding)
+                Width: =If (App.Width <= 900, App.Width,App.Width/3)
+                Y: =lbl_headerapp_2.Y + lbl_headerapp_2.Height
+                ZIndex: =2
+
+                "gal_customers As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    AccessibleLabel: ="agenda"
+                    Height: =Parent.Height
+                    Items: ='customers (v2.0)'
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =false
+                    TemplatePadding: =0
+                    TemplateSize: =If(isExpand, 200,113)
+                    Width: =Parent.Width
+                    Y: =
+                    ZIndex: =1
+
+                    HtmlText1_21 As htmlViewer:
+                        Height: =btn_bg_8.Height+20
+                        HtmlText: |+
+                            ="<div style='margin:0px;width:"&btn_bg_8.Width&"px;height:"&btn_bg_8.Height &"px;background-color:#;box-shadow:2px 2px 3px 3px  rgba(0,0,0,0.14); border-radius:4px'></div>"
+                            
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0   
+                        PaddingTop: =0
+                        Width: =btn_bg_8.Width+10
+                        X: =btn_bg_8.X
+                        Y: =btn_bg_8.Y
+                        ZIndex: =1
+
+                    btn_bg_8 As button:
+                        BorderColor: =
+                        Color: =
+                        DisabledColor: =
+                        DisabledFill: =
+                        DisplayMode: =DisplayMode.View
+                        Fill: =gblAppStyles.Card.Background
+                        Height: =If(isExpand, 183, 92)
+                        HoverBorderColor: =
+                        HoverColor: =
+                        HoverFill: =
+                        PressedBorderColor: =
+                        PressedColor: =
+                        PressedFill: =
+                        Text: =""
+                        Width: =Parent.Width-50
+                        X: =20
+                        Y: =40
+                        ZIndex: =2
+
+                    ctn_left_8 As groupContainer.manualLayoutContainer:
+                        Height: =btn_bg_8.Height
+                        Width: =Parent.Width -ctn_right_13.Width-btn_bg_13.X-25
+                        X: =btn_bg_8.X
+                        Y: =40
+                        ZIndex: =3
+
+                        lbl_title_11 As label:
+                            AutoHeight: =true
+                            FontWeight: =FontWeight.Semibold
+                            Height: =27
+                            PaddingLeft: =10
+                            PaddingTop: =15
+                            Size: =12
+                            Text: =ThisItem.displayName
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        lbl_subtitle_4 As label:
+                            AutoHeight: =true
+                            FontWeight: =FontWeight.Semibold
+                            Height: =27
+                            PaddingLeft: =10
+                            Size: =12
+                            Text: =ThisItem.number
+                            Width: =Parent.Width- Self.X
+                            Y: =lbl_title_11.Y + lbl_title_11.Height
+                            ZIndex: =3
+
+                        lbl_body_11 As label:
+                            PaddingLeft: =15
+                            Size: =10
+                            Text: =ThisItem.email
+                            VerticalAlign: =VerticalAlign.Top
+                            Visible: =isExpand
+                            Width: =286.6666666666667
+                            Y: =lbl_subtitle_4.Y + lbl_subtitle_4.Height +5
+                            ZIndex: =5
+
+                        lbl_body_12 As label:
+                            PaddingLeft: =15
+                            Size: =10
+                            Text: =ThisItem.country & " - " & ThisItem.city
+                            VerticalAlign: =VerticalAlign.Top
+                            Visible: =isExpand
+                            Width: =286.6666666666667
+                            Y: =115
+                            ZIndex: =6
+
+                    ctn_right_8 As groupContainer.manualLayoutContainer:
+                        Height: =btn_bg_8.Height
+                        Width: = btn_bg_8.Width /3
+                        X: =ctn_left_8.X+ctn_left_8.Width-Self.Width
+                        Y: =21
+                        ZIndex: =4
+
+                        btn_primaryAction_7 As button:
+                            Height: =30
+                            Size: =12
+                            Text: ="join"
+                            Visible: =false
+                            Width: =60
+                            X: =Parent.Width-Self.Width-20
+                            Y: =lbl_title_11.Y + lbl_title_11.Height+10
+                            ZIndex: =1
+
+                        Image4_13 As image:
+                            AccessibleLabel: ="expand"
+                            Height: =16
+                            Image: |
+                                ="data:image/svg+xml;utf8, "&EncodeUrl(" 
+                                <svg width='48' height='48' viewBox='0 0 48 48' fill='"&If(gblThemeHiCo,  "#ffffff", gblThemeDark, "#ffffff","#252423") &"' xmlns='http://www.w3.org/2000/svg'>
+                                <path d='M8.36612 16.1161C7.87796 16.6043 7.87796 17.3957 8.36612 17.8839L23.1161 32.6339C23.6043 33.122 24.3957 33.122 24.8839 32.6339L39.6339 17.8839C40.122 17.3957 40.122 16.6043 39.6339 16.1161C39.1457 15.628 38.3543 15.628 37.8661 16.1161L24 29.9822L10.1339 16.1161C9.64573 15.628 8.85427 15.628 8.36612 16.1161Z' />
+                                </svg>
+                                 ")
+                            OnSelect: =Set(isExpand, !isExpand)
+                            Width: =16
+                            X: =Parent.Width - Self.Width*2
+                            Y: =btn_primaryAction_7.Y-Self.Height-5
+                            ZIndex: =2
+
+                lbl_customers As label:
+                    FontWeight: =FontWeight.Semibold
+                    Role: =TextRole.Heading2
+                    Size: =12
+                    Text: ="customers"
+                    Width: =btn_bg_8.Width
+                    X: =btn_bg_8.X
+                    Y: =0   
+                    ZIndex: =2
+
+            ctn_employees As groupContainer.manualLayoutContainer:
+                Height: =lbl_employees.Height+ CountRows(gal_employees.AllItems)*(gal_employees.TemplateHeight+ gal_employees.TemplatePadding)
+                Width: =If (App.Width <= 900, App.Width,App.Width/3)
+                X: =If(App.Width <= 900, ctn_customers.X, ctn_items.X + ctn_items.Width)
+                Y: =If(App.Width <= 900, ctn_items.Y+ctn_items.Height, 40)
+                ZIndex: =4
+
+                "gal_employees As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    AccessibleLabel: ="recent files"
+                    Height: =Parent.Height
+                    Items: |-
+                        =//'ProductivityHub-Connector'.GetFiles().value
+                        'employees (v2.0)'
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =false
+                    TemplatePadding: =0
+                    TemplateSize: =113
+                    Width: =Parent.Width
+                    Y: =40
+                    ZIndex: =3
+
+                    HtmlText1_33 As htmlViewer:
+                        Height: =btn_bg_13.Height+20
+                        HtmlText: |+
+                            ="<div style='margin:0px;width:"&btn_bg_13.Width&"px;height:"&btn_bg_13.Height &"px;background-color:#;box-shadow:2px 2px 3px 3px  rgba(0,0,0,0.14); border-radius:4px'></div>"
+                            
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0   
+                        PaddingTop: =0
+                        Width: =btn_bg_13.Width+10
+                        X: =btn_bg_13.X
+                        Y: =btn_bg_13.Y
+                        ZIndex: =1
+
+                    btn_bg_13 As button:
+                        BorderColor: =
+                        Color: =
+                        DisabledColor: =
+                        DisabledFill: =
+                        DisplayMode: =DisplayMode.View
+                        Fill: =gblAppStyles.Card.Background
+                        Height: =92
+                        HoverBorderColor: =
+                        HoverColor: =
+                        HoverFill: =
+                        PressedBorderColor: =
+                        PressedColor: =
+                        PressedFill: =
+                        Text: =""
+                        Width: =Parent.Width-50
+                        X: =20
+                        ZIndex: =2
+
+                    ctn_left_13 As groupContainer.manualLayoutContainer:
+                        Height: =btn_bg_8.Height
+                        Width: =Parent.Width -ctn_right_13.Width-btn_bg_13.X-25
+                        X: =btn_bg_13.X  
+                        ZIndex: =4
+
+                        lbl_title_19 As label:
+                            AutoHeight: =true
+                            FontWeight: =FontWeight.Semibold
+                            Height: =27
+                            PaddingLeft: =10
+                            PaddingTop: =15
+                            Size: =12
+                            Text: =ThisItem.displayName
+                            Width: =Parent.Width-Self.X
+                            ZIndex: =2
+
+                        lbl_subtitle_11 As label:
+                            AutoHeight: =true
+                            Height: =27
+                            PaddingLeft: =15
+                            Size: =10
+                            Text: =ThisItem.jobTitle
+                            Width: =Parent.Width- Self.X
+                            X: =0   
+                            Y: =50
+                            ZIndex: =3
+
+                    ctn_right_13 As groupContainer.manualLayoutContainer:
+                        Height: =btn_bg_8.Height
+                        Width: =If(App.Width <= 1500 && App.Width >=900, 0, btn_bg_8.Width /3)
+                        X: =ctn_left_13.X + ctn_left_13.Width
+                        ZIndex: =5
+
+                lbl_employees As label:
+                    FontWeight: =FontWeight.Semibold
+                    Role: =TextRole.Heading2
+                    Size: =12
+                    Text: ="employees"
+                    Width: =btn_bg_8.Width
+                    X: =btn_bg_8.X
+                    ZIndex: =4
+
+            ctn_items As groupContainer.manualLayoutContainer:
+                Height: =lbl_items.Height+ CountRows(gal_items.AllItems)*(gal_items.TemplateHeight+ gal_items.TemplatePadding)
+                Width: =If (App.Width <= 900, App.Width,App.Width/3)
+                X: =If(App.Width <= 900, ctn_customers.X, ctn_customers.X + ctn_customers.Width)
+                Y: =If(App.Width <= 900, ctn_customers.Y+ctn_customers.Height, 40)
+                ZIndex: =5
+
+                "gal_items As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    AccessibleLabel: ="tasks"
+                    Height: =Parent.Height
+                    Items: ='items (v2.0)'
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =false
+                    TemplatePadding: =0
+                    TemplateSize: =113
+                    Width: =Parent.Width
+                    Y: =40
+                    ZIndex: =1
+
+                    HtmlText1_30 As htmlViewer:
+                        Height: =btn_bg_9.Height+20
+                        HtmlText: |+
+                            ="<div style='margin:0px;width:"&btn_bg_9.Width&"px;height:"&btn_bg_9.Height &"px;background-color:#;box-shadow:2px 2px 3px 3px  rgba(0,0,0,0.14); border-radius:4px'></div>"
+                            
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0   
+                        PaddingTop: =0
+                        Width: =btn_bg_9.Width+10
+                        X: =btn_bg_9.X
+                        Y: =btn_bg_9.Y
+                        ZIndex: =1
+
+                    btn_bg_9 As button:
+                        BorderColor: =
+                        Color: =
+                        DisabledColor: =
+                        DisabledFill: =
+                        DisplayMode: =DisplayMode.View
+                        Fill: =gblAppStyles.Card.Background
+                        Height: =92
+                        HoverBorderColor: =
+                        HoverColor: =
+                        HoverFill: =
+                        PressedBorderColor: =
+                        PressedColor: =
+                        PressedFill: =
+                        Text: =""
+                        Width: =Parent.Width-50
+                        X: =20
+                        ZIndex: =2
+
+                    ctn_left_9 As groupContainer.manualLayoutContainer:
+                        Height: =btn_bg_8.Height
+                        Width: =btn_bg_8.Width/3*2
+                        X: =btn_bg_9.X  
+                        Y: =btn_bg_9.Y
+                        ZIndex: =11
+
+                        lbl_title_12 As label:
+                            AutoHeight: =true
+                            Height: =27
+                            PaddingLeft: =10
+                            PaddingTop: =15
+                            Size: =10
+                            Text: =ThisItem.number
+                            Width: =Parent.Width-Self.X
+                            Y: =40
+                            ZIndex: =2
+
+                        lbl_body_16 As label:
+                            FontWeight: =FontWeight.Semibold
+                            PaddingLeft: =15
+                            PaddingTop: =15
+                            Size: =12
+                            Text: =ThisItem.displayName
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =286.6666666666667
+                            ZIndex: =5
+
+                    ctn_right_9 As groupContainer.manualLayoutContainer:
+                        Height: =btn_bg_8.Height
+                        Width: =btn_bg_8.Width /3
+                        X: =ctn_left_9.X + ctn_left_9.Width
+                        Y: =btn_bg_9.Y
+                        ZIndex: =12
+
+                        lbl_title_13 As label:
+                            Align: =Align.Right
+                            FontWeight: =FontWeight.Semibold
+                            Height: =27
+                            PaddingLeft: =10
+                            PaddingRight: =20
+                            PaddingTop: =15
+                            Size: =10
+                            Text: =""
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                lbl_items As label:
+                    FontWeight: =FontWeight.Semibold
+                    Role: =TextRole.Heading2
+                    Size: =12
+                    Text: ="items"
+                    Width: =btn_bg_8.Width
+                    X: =btn_bg_9.X
+                    ZIndex: =3
+
+            ctn_header_4 As groupContainer.manualLayoutContainer:
+                Height: =40
+                Width: =App.Width
+                ZIndex: =8
+
+                icon_reload_3 As icon.Reload:
+                    AccessibleLabel: ="reload"
+                    Height: =16
+                    Icon: =Icon.Reload
+                    OnSelect: |
+                        =Refresh('customers (v2.0)'); Refresh('items (v2.0)'); Refresh('employees (v2.0)')
+                    Width: =16
+                    X: =Parent.Width-Self.Width-30
+                    Y: =17
+                    ZIndex: =2
+
+                drp_theme_5 As dropdown:
+                    AccessibleLabel: ="select theme"
+                    Items: =["default", "dark", "high-contrast"]
+                    OnChange: |
+                        =
+                        // THEME
+                        Concurrent(
+                            Set(
+                                gblThemeDark,
+                                Param("theme") = "dark" Or drp_theme_5.SelectedText.Value = "dark"
+                            ),
+                            Set(
+                                gblThemeHiCo,
+                                Param("theme") = "contrast" Or drp_theme_5.SelectedText.Value = "high-contrast"
+                            )
+                        );
+                        Set(
+                            gblAppColors,
+                            {
+                                // Fluent Design Colors
+                                BackgroundDark: ColorValue("#2d2c2c"),
+                                BackgroundDefault: ColorValue("#F3F2F1"),
+                                BackgroundHighContrast: ColorValue("#000000"),
+                                HighContrastBackground: ColorValue("#000000"),
+                                HighContrastDisabled: ColorValue("#2EF149"),
+                                HighContrastHyperlinks: ColorValue("#FFFD39"),
+                                HighContrastSelectedBackground: ColorValue("#00EBFD"),
+                                HighContrastSelectedText: ColorValue("#000000"),
+                                HighContrastText: ColorValue("#FFFFFF"),
+                                NeutralMobileWhite: ColorValue("#FFFFFF"),
+                                NeutralWebBlack: ColorValue("#000000"),
+                                NeutralWebGray10: ColorValue("#FAF9F8"),
+                                NeutralWebGray100: ColorValue("#979593"),
+                                NeutralWebGray110: ColorValue("#8A8886"),
+                                NeutralWebGray120: ColorValue("#797775"),
+                                NeutralWebGray130: ColorValue("#605E5C"),
+                                NeutralWebGray140: ColorValue("#484644"),
+                                NeutralWebGray150: ColorValue("#3B3A39"),
+                                NeutralWebGray160: ColorValue("#323130"),
+                                NeutralWebGray170: ColorValue("#292827"),
+                                NeutralWebGray180: ColorValue("#252423"),
+                                NeutralWebGray190: ColorValue("#201f1e"),
+                                NeutralWebGray20: ColorValue("#F3F2F1"),
+                                NeutralWebGray200: ColorValue("#1B1A19"),
+                                NeutralWebGray210: ColorValue("#161514"),
+                                NeutralWebGray220: ColorValue("#11100F"),
+                                NeutralWebGray30: ColorValue("#EDEBE9"),
+                                NeutralWebGray40: ColorValue("#E1DFDD"),
+                                NeutralWebGray50: ColorValue("#D2D0CE"),
+                                NeutralWebGray60: ColorValue("#C8C6C4"),
+                                NeutralWebGray70: ColorValue("#BEBBB8"),
+                                NeutralWebGray80: ColorValue("#B3B0AD"),
+                                NeutralWebGray90: ColorValue("#A19F9D"),
+                                NeutralWebWhite: ColorValue("#FFFFFF"),
+                                OverlayTransparent: RGBA(
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ),
+                                OverlayLight: RGBA(
+                                    255,
+                                    255,
+                                    255,
+                                    0.6
+                                ),
+                                OverlayDark: RGBA(
+                                    0,
+                                    0,
+                                    0,
+                                    0.6
+                                ),
+                                TeamsDarkPrimary: ColorValue("#7A7FEA"),
+                                TeamsDarkShade10: ColorValue("#8C90F4"),
+                                TeamsDarkShade20: ColorValue("#9EA2FF"),
+                                TeamsDarkShade30: ColorValue("#BCBDFF"),
+                                TeamsDarkTint10: ColorValue("#6264A7"),
+                                TeamsDarkTint20: ColorValue("#4E4E86"),
+                                TeamsDarkTint30: ColorValue("#3F3E5D"),
+                                TeamsDarkTint40: ColorValue("#373644"),
+                                TeamsDefaultPrimary: ColorValue("#6264A7"),
+                                TeamsDefaultShade10: ColorValue("#464775"),
+                                TeamsDefaultShade20: ColorValue("#33344A"),
+                                TeamsDefaultTint10: ColorValue("#888CC7"),
+                                TeamsDefaultTint20: ColorValue("#A6A7DC"),
+                                TeamsDefaultTint30: ColorValue("#BDBDE6"),
+                                TeamsDefaultTint40: ColorValue("#E2E2F6"),
+                                TeamsDefaultTint50: ColorValue("#F4F4FC")
+                            }
+                        );
+                        /*Set(
+                            gblAppSizes,
+                            {
+                                Padding: {Page: 20},
+                                Font: {
+                                    Small: If(
+                                        gblAppSetting_inputMobileOnWeb,
+                                        18,
+                                        gblAppSetting_inputMobile,
+                                        11,
+                                        9
+                                    ) + gblAppSetting_inputScaleFontsBy,
+                                    Medium: If(
+                                        gblAppSetting_inputMobileOnWeb,
+                                        20,
+                                        gblAppSetting_inputMobile,
+                                        15,
+                                        10.5
+                                    ) + gblAppSetting_inputScaleFontsBy,
+                                    Large: If(
+                                        gblAppSetting_inputMobileOnWeb,
+                                        22,
+                                        gblAppSetting_inputMobile,
+                                        18,
+                                        15
+                                    ) + gblAppSetting_inputScaleFontsBy,
+                                    ExtraLarge: If(
+                                        gblAppSetting_inputMobileOnWeb,
+                                        25,
+                                        gblAppSetting_inputMobile,
+                                        22,
+                                        18
+                                    ) + gblAppSetting_inputScaleFontsBy
+                                }
+                            }
+                        );*/
+                        Set(
+                            gblAppStyles,
+                            {
+                                Background: {
+                                    Fill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.BackgroundHighContrast,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray190,
+                                        gblAppColors.BackgroundDefault
+                                    )
+                                },
+                                Dialogs: {
+                                    Fill: If(
+                                        gblThemeHiCo,
+                                        Transparent,
+                                        gblThemeDark,
+                                        RGBA(
+                                            255,
+                                            255,
+                                            255,
+                                            .6
+                                        ),
+                                        RGBA(
+                                            0,
+                                            0,
+                                            0,
+                                            .6
+                                        )
+                                    )
+                                },
+                                Dividers: {
+                                    TopMenu: If(
+                                        gblThemeHiCo,
+                                        White,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray40
+                                    ),
+                                    Elements: If(
+                                        gblThemeHiCo,
+                                        White,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray40
+                                    ),
+                                    Background: If(
+                                        gblThemeHiCo,
+                                        White,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray100,
+                                        gblAppColors.NeutralWebGray40
+                                    )
+                                },
+                                Gallery: {
+                                    SelectedItem: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint30,
+                                        gblAppColors.TeamsDefaultTint40
+                                    ),
+                                    SelectedItemDisabled: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint40,
+                                        gblAppColors.TeamsDefaultTint50
+                                    ),
+                                    Fill: Transparent,
+                                    HoverFill: If(
+                                        gblThemeHiCo,
+                                        Transparent,
+                                        gblThemeDark,
+                                        RGBA(
+                                            255,
+                                            255,
+                                            255,
+                                            .06
+                                        ),
+                                        RGBA(
+                                            128,
+                                            128,
+                                            128,
+                                            .06
+                                        )
+                                    ),
+                                    PressedFill: If(
+                                        gblThemeHiCo,
+                                        Transparent,
+                                        gblThemeDark,
+                                        RGBA(
+                                            255,
+                                            255,
+                                            255,
+                                            .12
+                                        ),
+                                        RGBA(
+                                            128,
+                                            128,
+                                            128,
+                                            .12
+                                        )
+                                    )
+                                },
+                                Icons: {
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        "FFFD39",
+                                        gblThemeDark,
+                                        "7A7FEA",
+                                        "6264A7"
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        "2EF149",
+                                        gblThemeDark,
+                                        "797775",
+                                        "605E5C"
+                                    ),
+                                    Fill_Category: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint30,
+                                        gblAppColors.TeamsDefaultTint50
+                                    ),
+                                    DisabledFill_Category: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray60,
+                                        gblAppColors.NeutralWebGray50
+                                    ),
+                                    Color_Search: If(
+                                        gblThemeHiCo,
+                                        "FFFD39",
+                                        gblThemeDark,
+                                        "7A7FEA",
+                                        "6264A7"
+                                    ),
+                                    DisabledColor_Search: If(
+                                        gblThemeHiCo,
+                                        "2EF149",
+                                        gblThemeDark,
+                                        "979593",
+                                        "323130"
+                                    ),
+                                    Color_Green: If(
+                                        gblThemeHiCo,
+                                        "FFFFFF",
+                                        gblThemeDark,
+                                        "92C353",
+                                        "107c10"
+                                    ),
+                                    Color_Red: If(
+                                        gblThemeHiCo,
+                                        "FFFFFF",
+                                        gblThemeDark,
+                                        "F1707B",
+                                        "d83b01"
+                                    ),
+                                    Color_Yellow: If(
+                                        gblThemeHiCo,
+                                        "FFFFFF",
+                                        gblThemeDark,
+                                        "FCE100",
+                                        "FCE100"
+                                    ),
+                                    Color_Gray: If(
+                                        gblThemeHiCo,
+                                        "FFFFFF",
+                                        gblThemeDark,
+                                        "797775",
+                                        "252423"
+                                    )
+                                },
+                                ButtonPrimary: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint10,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    BorderThickness: If(
+                                        gblThemeHiCo,
+                                        4,
+                                        gblThemeDark,
+                                        0,
+                                        0
+                                    ),
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    DisabledFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    Fill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint10,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkShade20,
+                                        gblAppColors.NeutralMobileBlack
+                                    ),
+                                    FocusedBorderThickness: If(
+                                        gblThemeHiCo,
+                                        3,
+                                        gblThemeDark,
+                                        2.5,
+                                        2.5
+                                    ),
+                                    HoverBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultTint10,
+                                        gblAppColors.TeamsDefaultShade10
+                                    ),
+                                    HoverColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    HoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultTint10,
+                                        gblAppColors.TeamsDefaultShade10
+                                    ),
+                                    PressedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultShade10,
+                                        gblAppColors.TeamsDefaultShade20
+                                    ),
+                                    PressedColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    PressedFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultShade10,
+                                        gblAppColors.TeamsDefaultShade20
+                                    )/*,
+                                    RadiusBottomLeft: If(
+                                        gblAppSetting_inputMobile,
+                                        5,
+                                        2
+                                    ),
+                                    RadiusBottomRight: If(
+                                        gblAppSetting_inputMobile,
+                                        5,
+                                        2
+                                    ),
+                                    RadiusTopLeft: If(
+                                        gblAppSetting_inputMobile,
+                                        5,
+                                        2
+                                    ),
+                                    RadiusTopRight: If(
+                                        gblAppSetting_inputMobile,
+                                        5,
+                                        2
+                                    ),
+                                    Size: If(
+                                        gblAppSetting_inputMobile,
+                                        gblAppSizes.Font.Large,
+                                        gblAppSizes.Font.Medium
+                                    )*/
+                                },
+                                ButtonSecondary: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray40
+                                    ),
+                                    BorderThickness: If(
+                                        gblThemeHiCo,
+                                        2,
+                                        gblThemeDark,
+                                        1,
+                                        0.5
+                                    ),
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray180
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    DisabledFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    Fill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray160,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkShade20,
+                                        gblAppColors.TeamsDefaultShade20
+                                    ),
+                                    FocusedBorderThickness: If(
+                                        gblThemeHiCo,
+                                        3,
+                                        gblThemeDark,
+                                        1.5,
+                                        1.5
+                                    ),
+                                    HoverBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    HoverColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    HoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    PressedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    PressedColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    PressedFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray140,
+                                        gblAppColors.NeutralWebGray40
+                                    )/*,
+                                    RadiusBottomLeft: If(
+                                        gblAppSetting_inputMobile,
+                                        5,
+                                        2
+                                    ),
+                                    RadiusBottomRight: If(
+                                        gblAppSetting_inputMobile,
+                                        5,
+                                        2
+                                    ),
+                                    RadiusTopLeft: If(
+                                        gblAppSetting_inputMobile,
+                                        5,
+                                        2
+                                    ),
+                                    RadiusTopRight: If(
+                                        gblAppSetting_inputMobile,
+                                        5,
+                                        2
+                                    ),
+                                    Size: gblAppSizes.Font.Medium*/
+                                },
+                                ButtonBackground: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray50
+                                    ),
+                                    BorderThickness: If(
+                                        gblThemeHiCo,
+                                        1,
+                                        gblThemeDark,
+                                        1.5,
+                                        1.5
+                                    ),
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralMobileWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    DisabledFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray10
+                                    ),
+                                    Fill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray60,
+                                        gblAppColors.NeutralWebGray40
+                                    ),
+                                    FocusedBorderThickness: If(
+                                        gblThemeHiCo,
+                                        1,
+                                        gblThemeDark,
+                                        0,
+                                        0
+                                    ),
+                                    HoverBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    HoverColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    HoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    PressedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    PressedColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    PressedFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray140,
+                                        gblAppColors.NeutralWebGray40
+                                    ),
+                                    RadiusBottomLeft: 5,
+                                    RadiusBottomRight: 5,
+                                    RadiusTopLeft: 5,
+                                    RadiusTopRight: 5,
+                                    Size: 0
+                                },
+                                ButtonTransparent: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    BorderThickness: If(
+                                        gblThemeHiCo,
+                                        0,
+                                        gblThemeDark,
+                                        0,
+                                        0
+                                    ),
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray180
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayDark,
+                                        gblAppColors.OverlayLight
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray100,
+                                        gblAppColors.NeutralWebGray100
+                                    ),
+                                    DisabledFill: Transparent,
+                                    Fill: Transparent,
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkPrimary,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    FocusedBorderThickness: If(
+                                        gblThemeHiCo,
+                                        1,
+                                        gblThemeDark,
+                                        0.1,
+                                        0.1
+                                    ),
+                                    HoverBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    HoverColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint10,
+                                        gblAppColors.TeamsDefaultShade10
+                                    ),
+                                    HoverFill: Transparent,
+                                    PressedBorderColor: Transparent,
+                                    PressedColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultShade10,
+                                        gblAppColors.TeamsDefaultShade20
+                                    ),
+                                    PressedFill: Transparent,
+                                    RadiusBottomLeft: 2,
+                                    RadiusBottomRight: 2,
+                                    RadiusTopLeft: 2,
+                                    RadiusTopRight: 2/*,
+                                    Size: gblAppSizes.Font.Medium*/
+                                },
+                                Card: {
+                                    Background: If(
+                                        gblThemeHiCo,
+                                        ColorValue("#2e2e2e"),
+                                        gblThemeDark,
+                                        ColorValue("#2e2e2e"),
+                                        ColorValue("#fcfcfc")
+                                    )
+                                },
+                                Checkbox: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    BorderThickness: If(
+                                        gblThemeHiCo,
+                                        2,
+                                        gblThemeDark,
+                                        1.5,
+                                        1.5
+                                    ),
+                                    CheckboxBackgroundFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.BackgroundDark,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    CheckboxBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint10,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    CheckmarkFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    DisabledFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    Fill: Transparent,
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint10,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    FocusedBorderThickness: If(
+                                        gblThemeHiCo,
+                                        2,
+                                        gblThemeDark,
+                                        0,
+                                        0
+                                    ),
+                                    HoverBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDarkTint10,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    HoverColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray180
+                                    ),
+                                    HoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    PressedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    PressedColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    PressedFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    )/*,
+                                    Size: gblAppSizes.Font.Medium*/
+                                },
+                                Dropdown: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray180,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    BorderThickness: If(
+                                        gblThemeHiCo,
+                                        1,
+                                        gblThemeDark,
+                                        1,
+                                        1
+                                    ),
+                                    ChevronBackground: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray220,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    ChevronDisabledBackground: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray130
+                                    ),
+                                    ChevronDisabledFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray80,
+                                        gblAppColors.NeutralWebGray80
+                                    ),
+                                    ChevronFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray130
+                                    ),
+                                    ChevronHoverBackground: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray200,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    ChevronHoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray130
+                                    ),
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray130
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray80,
+                                        gblAppColors.NeutralWebGray80
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray130
+                                    ),
+                                    DisabledFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    Fill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray220,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultPrimary,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    FocusedBorderThickness: If(
+                                        gblThemeHiCo,
+                                        1,
+                                        gblThemeDark,
+                                        1,
+                                        1
+                                    ),
+                                    HoverBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray180,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    HoverColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray130
+                                    ),
+                                    HoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    PressedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultPrimary,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    PressedColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray130
+                                    ),
+                                    PressedFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray180,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    SelectionColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    SelectionFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray120,
+                                        gblAppColors.NeutralWebGray60
+                                    )/*,
+                                    Size: gblAppSizes.Font.Medium*/
+                                },
+                                Label: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    BorderThickness: 0,
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray180
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray80,
+                                        gblAppColors.NeutralWebGray80
+                                    ),
+                                    DisabledFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    Fill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    FocusedBorderThickness: 0,
+                                    HoverBorderColor: Transparent,
+                                    HoverColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    HoverFill: Transparent,
+                                    PressedBorderColor: Transparent,
+                                    PressedColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray40,
+                                        gblAppColors.NeutralWebGray150
+                                    ),
+                                    PressedFill: Transparent/*,
+                                    Size: {
+                                        Small: gblAppSizes.Font.Small,
+                                        Medium: gblAppSizes.Font.Medium,
+                                        Large: gblAppSizes.Font.Large,
+                                        ExtraLarge: gblAppSizes.Font.ExtraLarge
+                                    }*/
+                                },
+                                HTML: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    BorderThickness: 0,
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray180
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    DisabledFill: Transparent,
+                                    Fill: Transparent,
+                                    HoverBorderColor: Transparent/*,
+                                    Size: {
+                                        Small: gblAppSizes.Font.Small,
+                                        Medium: gblAppSizes.Font.Medium,
+                                        Large: gblAppSizes.Font.Large,
+                                        ExtraLarge: gblAppSizes.Font.ExtraLarge
+                                    }*/
+                                },
+                                TextInput: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    BorderThickness: If(
+                                        gblThemeHiCo,
+                                        1,
+                                        gblThemeDark,
+                                        0,
+                                        0
+                                    ),
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray180
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray80,
+                                        gblAppColors.NeutralWebGray80
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray130,
+                                        gblAppColors.NeutralWebGray130
+                                    ),
+                                    DisabledFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray150,
+                                        gblAppColors.NeutralWebGray30
+                                    ),
+                                    Fill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray220,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultPrimary,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    FocusedBorderThickness: If(
+                                        gblThemeHiCo,
+                                        1,
+                                        gblThemeDark,
+                                        1,
+                                        1
+                                    ),
+                                    HoverBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray140,
+                                        gblAppColors.NeutralWebGray40
+                                    ),
+                                    HoverColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    HoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray140,
+                                        gblAppColors.NeutralWebGray40
+                                    ),
+                                    PressedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray120,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    PressedColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    PressedFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray120,
+                                        gblAppColors.NeutralWebGray60
+                                    ),
+                                    RadiusBottomLeft: 2,
+                                    RadiusBottomRight: 2,
+                                    RadiusTopLeft: 2,
+                                    RadiusTopRight: 2/*,
+                                    Size: gblAppSizes.Font.Medium*/
+                                },
+                                Toggle: {
+                                    BorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    BorderThickness: If(
+                                        gblThemeHiCo,
+                                        0,
+                                        gblThemeDark,
+                                        0,
+                                        0
+                                    ),
+                                    Color: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblAppColors.NeutralWebGray190
+                                    ),
+                                    DisabledBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray80,
+                                        gblAppColors.NeutralWebGray80
+                                    ),
+                                    DisabledColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastDisabled,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray80,
+                                        gblAppColors.NeutralWebGray80
+                                    ),
+                                    FalseFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebWhite,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    FalseHoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastHyperlinks,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray210,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    FocusedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultPrimary,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    FocusedBorderThickness: If(
+                                        gblThemeHiCo,
+                                        1,
+                                        gblThemeDark,
+                                        1,
+                                        1
+                                    ),
+                                    HandleFillTrue: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray180,
+                                        gblAppColors.NeutralWebWhite
+                                    ),
+                                    HandleFillFalse: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.NeutralWebBlack,
+                                        gblThemeDark,
+                                        gblAppColors.NeutralWebGray60,
+                                        gblAppColors.NeutralWebGray140
+                                    ),
+                                    HoverBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    PressedBorderColor: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.OverlayTransparent,
+                                        gblThemeDark,
+                                        gblAppColors.OverlayTransparent,
+                                        gblAppColors.OverlayTransparent
+                                    ),
+                                    //Size: gblAppSizes.Font.Medium,
+                                    TrueFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultPrimary,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    ),
+                                    TrueHoverFill: If(
+                                        gblThemeHiCo,
+                                        gblAppColors.HighContrastSelectedBackground,
+                                        gblThemeDark,
+                                        gblAppColors.TeamsDefaultPrimary,
+                                        gblAppColors.TeamsDefaultPrimary
+                                    )
+                                }
+                            }
+                        );
+                        Set(
+                            theme,
+                            Self.Selected.Value
+                        );
+                    Visible: =false
+                    X: =40
+                    ZIndex: =4
+
+        Footer_2 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =Transparent
+            Height: =30
+            Width: =App.Width
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            Container2_1 As groupContainer.horizontalAutoLayoutContainer:
+                Height: =100
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMode: =LayoutMode.Auto
+                Width: =App.Width
+                Y: =30
+                ZIndex: =7
+
+                Label8_5 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    Height: =Parent.Height
+                    Text: ="Productivity Hub for Business Central made with ❤  by Luise Freese, 2022."
+                    Width: =Parent.Width/3
+                    X: =20
+                    ZIndex: =1
+
+                Label8_4 As label:
+                    Align: =Align.Center
+                    Height: =Parent.Height
+                    OnSelect: |-
+                        =Launch("https://github.com/luisefreese/productivityhub")
+                    Text: ="Documentation"
+                    Underline: =true
+                    Width: =Parent.Width/3
+                    X: =348
+                    ZIndex: =2
+
+    lbl_headerapp_2 As label:
+        Align: =Align.Center
+        Color: =gblAppStyles.Label.Color
+        Text: |-
+            ="Productivity Hub
+            "
+        Width: =Parent.Width
+        ZIndex: =2
+

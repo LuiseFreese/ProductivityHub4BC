@@ -1,0 +1,128 @@
+cmp_card As CanvasComponent:
+    btnText: ="join"
+    btnVisible: =true
+    cardFill: =White
+    cardHeight: =92
+    cardImage: =SampleImage
+    cardWidth: =430
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =cmp_card.cardHeight + cmp_card.outsideMargin*2
+    isExpandable: =true
+    onSelectPrimary: =true
+    outsideMargin: =20
+    radius: =4
+    subtitle: ="Text"
+    title: ="Text"
+    Width: =cmp_card.cardWidth + cmp_card.outsideMargin*2
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HtmlText1_18 As htmlViewer:
+        Height: =btn_bg.Height +20
+        HtmlText: |+
+            ="<div style='margin:0px;width:"&btn_bg.Width&"px;height:"&btn_bg.Height &"px;background-color:#;box-shadow:2px 2px 3px 3px  rgba(0,0,0,0.14); border-radius:4px'></div>"
+            
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0   
+        PaddingTop: =0
+        Width: =btn_bg.Width+10
+        X: =btn_bg.X
+        Y: =btn_bg.Y
+        ZIndex: =1
+
+    btn_bg As button:
+        BorderColor: =
+        Color: =
+        DisabledColor: =
+        DisabledFill: =
+        DisplayMode: =DisplayMode.View
+        Fill: =cmp_card.cardFill
+        Height: =cmp_card.cardHeight
+        HoverBorderColor: =
+        HoverColor: =
+        HoverFill: =
+        PressedBorderColor: =
+        PressedColor: =
+        PressedFill: =
+        RadiusTopLeft: =cmp_card.radius
+        Text: =""
+        Width: =cmp_card.cardWidth
+        X: =cmp_card.outsideMargin
+        Y: =cmp_card.outsideMargin
+        ZIndex: =2
+
+    ctn_left As groupContainer.manualLayoutContainer:
+        Height: =btn_bg.Height
+        Width: =btn_bg.Width/3*2
+        X: =btn_bg.X
+        Y: =btn_bg.Y
+        ZIndex: =3
+
+        img_profilepic As image:
+            BorderColor: =
+            Height: =32
+            RadiusBottomLeft: =1000
+            RadiusBottomRight: =1000
+            RadiusTopLeft: =1000
+            RadiusTopRight: =1000
+            Width: =32
+            X: =lbl_title.X+ lbl_title.PaddingLeft
+            Y: =lbl_title.Y + lbl_title.Height+10
+            ZIndex: =1
+
+        lbl_title As label:
+            Height: =27
+            PaddingLeft: =10
+            PaddingTop: =15
+            Size: =10
+            Text: ="Text"
+            Width: =Parent.Width
+            ZIndex: =2
+
+        lbl_subtitle As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =27
+            PaddingLeft: =10
+            PaddingTop: =15
+            Size: =12
+            Text: ="Text"
+            Width: =Parent.Width- Self.X
+            X: =img_profilepic.X + img_profilepic.Width +10
+            Y: =40
+            ZIndex: =3
+
+    ctn_right As groupContainer.manualLayoutContainer:
+        Height: =btn_bg.Height
+        Width: =btn_bg.Width /3
+        X: =ctn_left.X+ctn_left.Width
+        Y: =btn_bg.Y
+        ZIndex: =4
+
+        btn_primaryAction As button:
+            Height: =30
+            OnSelect: =cmp_card.onSelectPrimary()
+            Size: =12
+            Text: =cmp_card.btnText
+            Visible: =cmp_card.btnVisible
+            Width: =60
+            X: =Parent.Width-Self.Width-20
+            Y: =lbl_title.Y + lbl_title.Height
+            ZIndex: =1
+
+        Image4_9 As image:
+            AccessibleLabel: ="expand"
+            Height: =16
+            Image: |
+                ="data:image/svg+xml;utf8, "&EncodeUrl(" 
+                <svg width='48' height='48' viewBox='0 0 48 48' fill='"&If(gblThemeHiCo,  "#ffffff", gblThemeDark, "#ffffff","#252423") &"' xmlns='http://www.w3.org/2000/svg'>
+                <path d='M8.36612 16.1161C7.87796 16.6043 7.87796 17.3957 8.36612 17.8839L23.1161 32.6339C23.6043 33.122 24.3957 33.122 24.8839 32.6339L39.6339 17.8839C40.122 17.3957 40.122 16.6043 39.6339 16.1161C39.1457 15.628 38.3543 15.628 37.8661 16.1161L24 29.9822L10.1339 16.1161C9.64573 15.628 8.85427 15.628 8.36612 16.1161Z' />
+                </svg>
+                 ")
+            OnSelect: =Set(isExpand, !isExpand)
+            Width: =16
+            X: =btn_primaryAction.X+ btn_primaryAction.Width- Self.Width
+            Y: =btn_primaryAction.Y-Self.Height-5
+            ZIndex: =2
+

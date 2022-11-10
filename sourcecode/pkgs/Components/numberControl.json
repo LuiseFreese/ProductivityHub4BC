@@ -1,0 +1,102 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "numberControl",
+    "TemplateGuid": "9051fb468fab4de9bd8ac9ef6ba24f93"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Start Number",
+      "Hidden": false,
+      "Name": "StartNumber",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "Starting number for the control",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Number Output",
+      "Hidden": true,
+      "Name": "NumberOutput",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "Output of the selected number",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Min",
+      "Hidden": false,
+      "Name": "Min",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "Minimum Number",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Max",
+      "Hidden": false,
+      "Name": "Max",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "Maximum number",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Increments",
+      "Hidden": false,
+      "Name": "Increments",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "By what number should the control increment",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Button Color",
+      "Hidden": false,
+      "Name": "ButtonColor",
+      "PropertyDataTypeKey": "Color",
+      "Tooltip": "Color of the plus and minus buttons",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Button Text Color",
+      "Hidden": false,
+      "Name": "ButtonTextColor",
+      "PropertyDataTypeKey": "Color",
+      "Tooltip": "Text Color of the Button",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "ButtonStyles",
+      "Hidden": false,
+      "Name": "ButtonStyles",
+      "PropertyDataTypeKey": "Record",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.326\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Record\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"BackGround\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"BorderColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"BorderThickness\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Color\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"DisabledBorderColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"DisabledColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"DisabledFill\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Fill\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"FillDarker\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"FocusedBorderColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"FocusedBorderThickness\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Height\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"HoverBorderColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"HoverColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"HoverFill\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"PressedBorderColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"PressedColor\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"PressedFill\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Radius\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"RadiusTopLeft\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Width\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": true,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638036900689967240",
+  "Name": "9051fb468fab4de9bd8ac9ef6ba24f93",
+  "OverridableProperties": {},
+  "SourceLibraryId": "f910e353-496a-49ee-9e15-80ce58436d89",
+  "SourceLibraryLogicalName": "crfb1_controlsapril_55ffe",
+  "TemplateOriginalName": "3c69029832f2499fa0673b8adb09e900",
+  "Version": "637935894038943190"
+}

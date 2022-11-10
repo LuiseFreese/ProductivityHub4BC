@@ -1,0 +1,41 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_dynamicssmbsaas",
+    "CdpRevision": {
+      "BaseUrl": "/v3",
+      "LastChangedTimeString": "2022-11-01T19:12:33.8050000Z",
+      "RevisionNumber": 3
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "addressLine1": "addressLine1",
+      "addressLine2": "addressLine2",
+      "birthDate": "birthDate",
+      "city": "city",
+      "country": "country",
+      "displayName": "displayName",
+      "email": "email",
+      "employmentDate": "employmentDate",
+      "givenName": "givenName",
+      "id": "id",
+      "jobTitle": "jobTitle",
+      "lastModifiedDateTime": "lastModifiedDateTime",
+      "middleName": "middleName",
+      "mobilePhone": "mobilePhone",
+      "number": "number",
+      "personalEmail": "personalEmail",
+      "phoneNumber": "phoneNumber",
+      "postalCode": "postalCode",
+      "state": "state",
+      "statisticsGroupCode": "statisticsGroupCode",
+      "status": "status",
+      "surname": "surname",
+      "terminationDate": "terminationDate"
+    },
+    "DatasetName": "PRODUCTION,c36f78aa-df3a-ed11-bbab-000d3a38e099",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "employees (v2.0)",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "37b2c7c9-cbb0-4247-b6dc-1841ea3a1851": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Premium",
+      "displayName": "Spatial Services",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1601/1.0.1601.3047/microsoftspatialservices/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_microsoftspatialservices",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "SpatialServices"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "37b2c7c9-cbb0-4247-b6dc-1841ea3a1851"
+  },
+  "ff7f27d9-8332-411d-b951-78e28e4bb341": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Premium",
+      "displayName": "Dynamics 365 Business Central",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1602/1.0.1602.3056/dynamicssmbsaas/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_dynamicssmbsaas",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "PRODUCTION,c36f78aa-df3a-ed11-bbab-000d3a38e099": {
+        "dataSources": {
+          "customers (v2.0)": {
+            "tableName": "customers,v2.0"
+          },
+          "employees (v2.0)": {
+            "tableName": "employees,v2.0"
+          },
+          "items (v2.0)": {
+            "tableName": "items,v2.0"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "customers (v2.0)",
+      "items (v2.0)",
+      "employees (v2.0)"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "ff7f27d9-8332-411d-b951-78e28e4bb341"
+  }
+}
