@@ -30,5 +30,4 @@ Productivity Hub
 ## Resources
 
 * [Build a Power Apps component](https://learn.microsoft.com/training/modules/build-power-app-component/)
-* [Custom connectors](https://learn.microsoft.com/connectors/custom-connectors/)
-* [Overview of Microsoft Graph](https://learn.microsoft.com/graph/overview)
+* [Dynamics 365 Business Central connector for Power Plaform](https://learn.microsoft.com/connectors/dynamicssmbsaas/)
